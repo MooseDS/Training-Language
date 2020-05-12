@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var billAmount = 0
+        var tip = 0
+        var tipRate = 0
+        var total = 0
+
+        billAmount = prompt("What is the bill amount?")
+        tipRate = prompt("What is the tip rate?")
+
+        billAmount = parseFloat(billAmount)
+        tipRate = parseFloat(tipRate)
+
+        tip = billAmount * (tipRate / 100)
+        tip = Math.round(tip * 100) / 100
+
+        total = billAmount + tip
+
+        console.log("Tip: $" + tip)
+        console.log("Total: $" + total)
+    </script>
+</body>
+</html>
