@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript"> 
+        var currentAge;
+        var retireAge;
+
+        currentAge = prompt("What is your current age? ", 0)
+        retireAge = prompt("At what age would you like to retire? ", 0)
+
+        if (isNaN(currentAge) | isNaN(retireAge)) {
+            console.log("Plz, Input Number")
+        } else if (currentAge <= 0 | retireAge <= 0) {
+            console.log("Must be greater than 0")
+        } else if (retireAge < currentAge) {
+            console.log("Already achieved your goal")
+        } else {
+            
+            var cYear = new Date().getFullYear()
+            var remainYear = retireAge - currentAge;
+            console.log(`You have ${remainYear} years left until you can retire`);
+            console.log(`It's ${cYear}, so you can retire in ${(cYear + remainYear)}.`) 
+            // ${cYear + retireAge - currentAge} 할 경우 202040. string 붙히기가 적용됨.
+        }
+
+    </script>
+</body>
+</html>
