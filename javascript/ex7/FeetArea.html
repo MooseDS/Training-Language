@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var length;
+        var width;
+        let value = 0.09290304
+
+        length = prompt("What is the length of the room in feet?");
+        width = prompt("What is the width of the room in feet?");
+
+        console.log(`You entered dimesions of ${length} feet by ${width} feet`);
+
+        let len = parseInt(length);
+        let wid = parseInt(width);
+
+        if (isNaN(len) | isNaN(wid)) {
+            console.log("Error Input");
+        } else if (len <= 0 | wid <= 0) {
+            console.log("Error Input");
+        } else {
+            let feetArea = len * wid;
+            let meterArea = feetArea * value;
+            console.log(`The area is\n${feetArea} square feet\n${meterArea.toFixed(3)}`)
+        }
+
+    </script>
+</body>
+</html>
