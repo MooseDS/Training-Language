@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <script type="text/javascript">
+        var people;
+        var pizzas;
+        var pieces;
+
+        people = prompt("How many people? ");
+        pizzas = prompt("How many pizza do you have? ");
+        pieces = prompt("How many pieces are in a pizza? ");
+
+        if (isNaN(people) | isNaN(pizzas) | isNaN(pieces)) {
+            console.log("Not Error")           
+        } else if (people <= 0 | pizzas <= 0 | pieces <= 0) {
+            console.log("Number <= 0")
+        } else if (pieces % 2 != 0){
+            console.log("짝수여야함")
+        } else {
+            var resultPieces = (pizzas * pieces) / people;
+            var resultLeft = (pizzas * pieces) % people;
+            var pieceStr =  (resultPieces == 1) ? "piece" : "pieces";
+            var leftStr = (resultLeft == 1) ? "piece" : "pieces";
+            
+            console.log(`Each person gets ${resultPieces} ${pieceStr} of pizza.`);
+            console.log(`There are ${resultLeft} leftover ${leftStr}.`);
+        }
+
+    </script>
+</body>
+</html>
