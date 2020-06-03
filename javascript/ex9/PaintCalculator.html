@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var length, width;
+
+        length = prompt("Length? ")
+        width = prompt("width? ")
+
+        if (isNaN(length) | isNaN(width) | !isInt(length) | !isInt(width)) {
+            console.log("Not Integer");
+        } else if (length <= 0 | width <= 0) {
+            console.log("Number must > 0")
+        } else {
+            var liters = 0;
+            var area = length * width;
+            let paint = 9;
+
+            liters = Math.ceil(area / paint);
+            console.log(`You will need to purchase ${liters} liters of\npaint to cover ${area} square meters.`)
+        }
+
+        function isInt(num) {
+            return num % 1 === 0;
+        }
+    </script>
+</body>
+
+</html>
