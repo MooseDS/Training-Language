@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var price1;
+        var price2;
+        var price3;
+
+        var quantity1;
+        var quantity2;
+        var quantity3;
+
+        price1 = prompt("Price of item 1: ")
+        quantity1 = prompt("Quantity of item 1: ")
+
+        price2 = prompt("Price of item 2: ")
+        quantity2 = prompt("Quantity of item 2: ")
+
+        price3 = prompt("Price of item 3: ")
+        quantity3 = prompt("Quantity of item 3: ")
+
+        if (isNaN(price1) | isNaN(price2) | isNaN(price2) |
+            isNaN(quantity1) | isNaN(quantity2) | isNaN(quantity3)) {
+            console.log("is not number")
+        } else if (!isInt(price1) | !isInt(price2) | !isInt(price2) |
+            !isInt(quantity1) | !isInt(quantity2) | !isInt(quantity3)) {
+            console.log("is not integer type")
+        } else if (price1 <= 0 | price2 <= 0 | price3 <= 0 |
+            quantity1 <= 0 | quantity2 <= 0 | quantity3 <= 0) {
+            console.log("must nubmer > 0")
+        } else {
+            let subtotal = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3);  
+            let tax = Math.round(subtotal * 5.5) / 100;
+            let total = subtotal + tax;
+
+            console.log(`Subtotal: ${parseFloat(subtotal).toFixed(2)}\nTax: ${tax}\nTotal: ${total}`);
+        }
+
+        function isInt(num) {
+            return num % 1 === 0;
+        }
+
+    </script>
+</body>
+
+</html>
