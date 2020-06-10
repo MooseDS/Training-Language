@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var principal;
+        var interest;
+        var years;
+
+        principal = prompt("Enter the principal: ");
+        interest = prompt("Enter the rate of interest: ");
+        years = prompt("Enter the number of years: ");
+
+        if (isNaN(principal) | isNaN(interest) | isNaN(years)) {
+            console.log("is not number");
+        } else if (principal <= 0 | interest <= 0 | years <= 0) {
+            console.log("must number > 0");
+        } else {
+            var investment = principal * ( 1 + (parseFloat(interest) * years) / 100 );
+            console.log(`After ${years} years at ${interest}%, the investment will be worth ${Math.floor(investment * 100) / 100}`);
+        }
+
+    </script>
+</body>
+</html>
