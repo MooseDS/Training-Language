@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var principalAmount;
+        var rate;
+        var years;
+        var compoundedYear;
+
+        principalAmount = prompt("What is the principal amount? ");
+        rate = prompt("What is the rate: ");
+        years = prompt("What is the number of years: ");
+        compoundedYear = prompt("What is the number of times the interest is compounded per year: ")
+
+        if (isNaN(principalAmount) || isNaN(rate) || isNaN(years) || isNaN(compoundedYear)) {
+            console.log("is Not Number")
+        } else if (principalAmount <= 0 || rate <= 0 || years <=0 || compoundedYear <= 0 ) {
+            console.log("Must number > 0")
+        } else {
+            let nt = compoundedYear * years;
+            let rn = (rate / 100) / compoundedYear + 1;
+            var result = principalAmount;
+            for (var i=0; i<nt; i++) {
+                result *= rn;
+            }
+            console.log(`${Math.ceil(result * 100) / 100}`);
+        }   
+
+        function isInt(num) {
+            return num % 1 === 0;
+        }
+    </script>
+</body>
+</html>
